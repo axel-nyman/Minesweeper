@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Minesweeper</title>
+</head>
+<body>
+    <h1>Minesweeper</h1>
+    <div class="background">
+        <div class="menu">
+            <div class="button" onclick="beginner()">Beginner</div>
+            <div class="button" onclick="intermediate()">Intermediate</div>
+            <div class="button" onclick="expert()">Expert</div>
+        </div>
+        <div id="counter"></div>
+
+        <div class="header">
+            <div class="times">   
+                <div class="numb0" id="mines-hundreds"></div>
+                <div class="numb0" id="mines-tens"></div>
+                <div class="numb0" id="mines-ones"></div>
+            </div>
+            
+            <div id="smileyface" class="happy button" onclick="reset()"></div>
+            
+            <div class="times">
+                <div class="numb0" id="timer-hundreds"></div>
+                <div class="numb0" id="timer-tens"></div>
+                <div class="numb0" id="timer-ones"></div>
+            </div>
+        </div>
+
+        <div class="board"></div>
+    </div>
+
+<h2 id="you-win">You Win!</h2>
+<h2 id="you-lose">You Lose!</h2>
+
+</body>
+<script src="/scripts/script.js"></script>
+</html>

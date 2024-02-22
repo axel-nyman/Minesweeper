@@ -1,0 +1,300 @@
+* {
+    box-sizing: border-box;
+    --number-padding: .15em;
+    --timer-size: 1.125em;
+    --square-size: 1.8rem;
+    --gap-size: 1rem;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+h2 {
+    display: none;
+}
+
+.background {
+    background-color: #BEBEBE;
+    border-bottom: .2em solid #808080;
+    border-right: .2em solid #808080;
+    border-top: .2em solid #F9F9F9;
+    border-left: .2em solid #F9F9F9;
+
+}
+
+.button {
+    background-color: #C0C0C0;
+    cursor: pointer;
+    border-bottom: .2em solid #808080;
+    border-right: .2em solid #808080;
+    border-top: .2em solid #F9F9F9;
+    border-left: .2em solid #F9F9F9;
+}
+
+.button:active {
+    border-top: .2em solid #808080;
+    border-left: .2em solid #808080;
+    border-bottom: .2em solid #F9F9F9;
+    border-right: .2em solid #F9F9F9;
+}
+
+#smileyface {
+    display: block;
+    width: calc(var(--square-size) * 1.2);
+    padding: .08em;
+}
+
+.board {
+    display: grid;
+    padding: 0;
+    margin: var(--gap-size);
+    grid-template-columns: repeat(var(--columns), 1fr);
+    grid-template-rows: repeat(var(--rows), 1fr);
+    background-color: #BFBFBF;
+    border-top: .2em solid #808080;
+    border-left: .2em solid #808080;
+    border-bottom: .2em solid #F9F9F9;
+    border-right: .2em solid #F9F9F9;
+}
+
+.menu > * {
+    width: 20rem;
+    margin: var(--gap-size);
+    padding: 1em;
+    text-align: center;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .4em;
+    margin: var(--gap-size);
+    border-top: .2em solid #808080;
+    border-left: .2em solid #808080;
+    border-bottom: .2em solid #F9F9F9;
+    border-right: .2em solid #F9F9F9;
+}
+
+.times {
+    display: flex;
+}
+
+.board > * {
+    width: var(--square-size);
+    height: var(--square-size);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+}
+
+.board > [data-status="hidden"] {
+    background-color: #BEBEBE;
+    border-bottom: .2em solid #808080;
+    border-right: .2em solid #808080;
+    border-top: .2em solid #F9F9F9;
+    border-left: .2em solid #F9F9F9;
+    cursor: pointer;
+}
+
+.board > [data-status="hiddenMine"] {
+    background-color: #BEBEBE;
+    border-bottom: .2em solid #808080;
+    border-right: .2em solid #808080;
+    border-top: .2em solid #F9F9F9;
+    border-left: .2em solid #F9F9F9;
+    cursor: pointer;
+}
+
+.board > [data-status="mine"] {
+    background-color: red;
+    content: url(/images/mine.png);
+    border: .075em solid #808080;
+}
+
+.board > [data-status="passiveMine"] {
+    background-color: #C0C0C0;
+    content: url(/images/mine.png);
+    border: .075em solid #808080;
+}
+
+.board > [data-status="zero"] {
+    background-color: #C0C0C0;
+    border: .075em solid #808080;
+}
+
+.board > [data-status="one"] {
+    background-color: #C0C0C0;
+    content: url(/images/one.png);
+    padding: var(--number-padding);
+    border: .075em solid #808080;
+}
+
+.board > [data-status="two"] {
+    background-color: #C0C0C0;
+    content: url(/images/two.png);
+    padding: var(--number-padding);
+    border: .075em solid #808080;
+}
+
+.board > [data-status="three"] {
+    background-color: #C0C0C0;
+    content: url(/images/three.png);
+    padding: var(--number-padding);
+    border: .075em solid #808080;
+}
+
+.board > [data-status="four"] {
+    background-color: #C0C0C0;
+    content: url(/images/four.png);
+    padding: var(--number-padding);
+    border: .075em solid #808080;
+}
+
+.board > [data-status="five"] {
+    background-color: #C0C0C0;
+    content: url(/images/five.png);
+    padding: var(--number-padding);
+    border: .075em solid #808080;
+}
+
+.board > [data-status="six"] {
+    background-color: #C0C0C0;
+    content: url(/images/six.png);
+    padding: var(--number-padding);
+    border: .075em solid #808080;
+}
+
+.board > [data-status="seven"] {
+    background-color: #C0C0C0;
+    content: url(/images/seven.png);
+    padding: var(--number-padding);
+    border: .075em solid #808080;
+}
+
+.board > [data-status="eight"] {
+    background-color: #C0C0C0;
+    content: url(/images/eight.png);
+    padding: var(--number-padding);
+    border: .075em solid #808080;
+}
+
+.numb0 {
+    content: url(/images/counters/zero.png);
+    width: var(--timer-size);
+}
+
+.numb1 {
+    content: url(/images/counters/one.png);
+    width: var(--timer-size);
+}
+
+.numb2 {
+    content: url(/images/counters/two.png);
+    width: var(--timer-size);
+}
+
+.numb3 {
+    content: url(/images/counters/three.png);
+    width: var(--timer-size);
+}
+
+.numb4 {
+    content: url(/images/counters/four.png);
+    width: var(--timer-size);
+}
+
+.numb5 {
+    content: url(/images/counters/five.png);
+    width: var(--timer-size);
+}
+
+.numb6 {
+    content: url(/images/counters/six.png);
+    width: var(--timer-size);
+}
+
+.numb7 {
+    content: url(/images/counters/seven.png);
+    width: var(--timer-size);
+}
+
+.numb8 {
+    content: url(/images/counters/eight.png);
+    width: var(--timer-size);
+}
+
+.numb9 {
+    content: url(/images/counters/nine.png);
+    width: var(--timer-size);
+}
+
+.board > [data-status="flagged"] {
+    background-color: #BEBEBE;
+    content: url(/images/flag.png);
+    padding: var(--number-padding);
+    border-bottom: .2em solid #808080;
+    border-right: .2em solid #808080;
+    border-top: .2em solid #F9F9F9;
+    border-left: .2em solid #F9F9F9;
+}
+
+.board > [data-status="flaggedMine"] {
+    background-color: #BEBEBE;
+    content: url(/images/flag.png);
+    padding: var(--number-padding);
+    border-bottom: .2em solid #808080;
+    border-right: .2em solid #808080;
+    border-top: .2em solid #F9F9F9;
+    border-left: .2em solid #F9F9F9;
+}
+
+.board > [data-status="misflagged"] {
+    background-color: #C0C0C0;
+    content: url(/images/misflagged.png);
+    border: .075em solid #808080;
+}
+
+.square {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #BEBEBE;
+    border-bottom: .2em solid #808080;
+    border-right: .2em solid #808080;
+    border-top: .2em solid #F9F9F9;
+    border-left: .2em solid #F9F9F9;
+    width: var(--square-size);
+    height: var(--square-size);
+}
+
+.mine {
+    background-color: red;
+    content: url(/images/mine.png);
+    border: .075em solid #808080;
+}
+
+.checked {
+    background-color: #C0C0C0;
+    border: .075em solid #808080;
+}
+
+.happy {
+    content: url(/images/happy.png);
+}
+
+.cool {
+    content: url(/images/win.png);
+}
+
+.dead {
+    content: url(/images/dead.png);
+}
+.click {
+    content: url(/images/click.png);
+}
